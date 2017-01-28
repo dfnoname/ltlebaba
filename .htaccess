@@ -1,0 +1,19 @@
+
+
+#PROSPERENT NORMAL and AMP HTML
+RewriteRule ^details/([0-9]+)/([a-zA-Z0-9-_]+)\.html$ ali-details.php?files=$1&title=$2 [L,QSA]
+RewriteRule ^search/([a-zA-Z0-9-_]+)$ ali-search.php?query=$1 [L,QSA]
+RewriteRule ^search$ ali-search.php [L,QSA]
+RewriteRule ^catid/([0-9]+)$ ali-category.php?id=$1 [L,QSA]
+RewriteRule ^contact$ goto-alibaba.php [L,QSA]
+
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
